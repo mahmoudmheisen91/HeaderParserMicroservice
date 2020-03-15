@@ -1,0 +1,28 @@
+{
+  "name": "request_header-microservice",
+  "version": "0.1.0",
+  "description": "API project for freeCodeCamp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.0.0-alpha.2",
+    "cors": "^2.8.1"
+  },
+  "engines": {
+    "node": "4.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahmoudmheisen91/TimestampMicroservice"
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express",
+    "freecodecamp"
+  ],
+  "author": "Mahmoud Mheisen",
+  "license": "MIT"
+}
