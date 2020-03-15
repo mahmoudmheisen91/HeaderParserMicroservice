@@ -18,21 +18,18 @@ app.get("/", function(req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-// your first API endpoint...
+// Greeting endpoint...
 app.get("/api/hello", function(req, res) {
   res.json({ greeting: "hello API" });
 });
 
-// Timestamp API endpoint...
+// Header Parser API endpoint...
 app.get("/api/whoami", (req, res) => {
-  let req_date = req.params.date_string;
-  if (+req_date) req_date = +req_date;
-
-  let date = new Date();
-  if (req_date) date = new Date(req_date);
-
-  let obj = { unix: date.getTime(), utc: date.toUTCString() };
-  if (!date.getTime()) obj = { error: "Invalid Date" };
+  let obj = {
+    ipaddress: req.ip,
+    language: req.headers["accept-language"],
+    software: req.headers["user-agent"]
+  };
 
   res.json(obj);
 });
